@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from './components/Accordion';
+import Search from './components/Search';
 
 const items = [
     {
@@ -14,12 +15,14 @@ const items = [
         title: 'I love WordPress',
         content: 'WordPress is an open-source website creation platform'
     },
-]
+];
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
-    return (
-        <div>
-            <Accordion items={ items } />
-        </div>
-    )
+  return (
+    <div>
+      {/* <Accordion items={ items } /> */}
+      <Search />
+    </div>
+  );
 };
