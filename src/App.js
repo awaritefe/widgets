@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
+import Dropdown from './components/Dropdown';
 
 const items = [
     {
@@ -17,12 +18,27 @@ const items = [
     },
 ];
 
+const options = [
+  {
+    label: 'See no Evil 🙈',
+    value: 'See'
+  },
+  {
+    label: 'Hear no Evil 🙉',
+    value: 'Hear'
+  },
+  {
+    label: 'Speak no Evil 🙊',
+    value: 'Speak'
+  },
+];
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
     <div>
       {/* <Accordion items={ items } /> */}
-      <Search />
+      <Dropdown options={ options } />
     </div>
   );
 };
