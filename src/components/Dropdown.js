@@ -5,14 +5,17 @@ const [ open, setOpen] = useState(false);
 const ref = useRef();
 
 useEffect(() => {
-  document.body.addEventListener("click", (event) => {
+  const onBodyClick = (event) => {
     if (ref.current.contains(event.target)) {
-      return
+      return;
     }
     setOpen(false);
-  },
-  { capture: true }
-  );
+  };
+  document.body.addEventListener("click", onBodyClick, { capture: true });
+
+  return () => {
+    document.body.removeEventListener("click", onBodyClick, { capture: true });
+  };
 }, []);
 
   const renderedOptions = options.map((option) => {

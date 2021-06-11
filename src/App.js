@@ -36,13 +36,18 @@ const options = [
 // eslint-disable-next-line import/no-anonymous-default-export
 const App = () => {
   const [selected, setSelected] = useState(options[0]);
+  const [ showDropdown, setShowDropdown] = useState(true);
+
   return (
     <div>
-      <Dropdown 
-        selected={ selected } 
-        onSelectedChange={ setSelected } 
-        options={ options }
-      />
+      <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>
+      { showDropdown ?
+        <Dropdown 
+          selected={ selected } 
+          onSelectedChange={ setSelected } 
+          options={ options }
+        /> : null
+      }
     </div>
   );
 };
